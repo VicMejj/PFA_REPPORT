@@ -1,0 +1,161 @@
+\documentclass[12pt,a4paper]{report}
+
+% ---------------- Packages ----------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{minitoc}
+\usepackage{titlesec}
+\usepackage{tocbibind} % Added for proper TOC in TOC
+\usepackage{url} % Added for better URL formatting
+\usepackage{tikz}
+\usepackage{subcaption}
+\usetikzlibrary{shapes, arrows, positioning, calc}
+
+% ---------------- Layout ----------------
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+\onehalfspacing
+\setlength{\headheight}{15pt}
+
+% ---------------- Header / Footer ----------------
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{ERP System — Anter's Lab}
+\rhead{Montassar Mejri}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt} % Add header rule
+
+% ---------------- Chapter Formatting ----------------
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\titlespacing*{\chapter}{0pt}{-30pt}{40pt}
+
+% ---------------- Listings Setup ----------------
+\lstset{
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  frame=single,
+  numbers=left,
+  numberstyle=\tiny,
+  tabsize=2
+}
+
+% ---------------- Hyperref Setup ----------------
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={ERP System for Anter's Lab},
+    bookmarks=true,
+}
+
+% ---------------- Document ----------------
+\begin{document}
+
+% Cover Page
+\begin{titlepage}
+  \centering
+  
+  % Logos
+  \includegraphics[width=0.3\textwidth]{isikef.png}\hfill
+  \includegraphics[width=0.15\textwidth]{jendouba.png}
+  
+  \vspace{1.5cm}
+  
+  % Institution Header
+  {\scshape\large Republic of Tunisia\\
+  Ministry of Higher Education and Scientific Research\\
+  University of Jendouba\\
+  Higher Institute of Computer Science of Le Kef\par}
+  
+  \vspace{1.5cm}
+  
+  % Horizontal line
+  \noindent\rule{\textwidth}{0.5pt}
+  
+  \vspace{2cm}
+  
+  {\Huge\bfseries ERP System for Anter's Lab\par}
+  \vspace{1cm}
+  {\Large Final Year Project Report\par}
+  \vspace{1cm}
+  {\scshape\large Presented to Higher Institute of Computer Science of Le Kef\par}
+  \vspace{1.5cm}
+  
+  \begin{tabular}{@{}>{\bfseries}l l@{}}
+    Student: & Montassar Mejri (GL2F) \\
+    Professional Supervisor: & Hedi Cherni \\
+    Host Enterprise: & Anter's Lab \\
+    Academic Year: & 2024 -- 2025 \\
+  \end{tabular}
+  
+  \vspace*{\fill}
+  {\large Presented on: \today}
+\end{titlepage}
+
+% Roman numbering for prelims
+\pagenumbering{roman}
+
+% ---------- Preliminary Pages ----------
+\input{chapters/chapter 0/resume} % Changed from "resume" to "summary"
+\input{chapters/chapter 0/remicement} % Fixed spelling and path
+\input{chapters/chapter 0/abrev} % Changed from "abrev" to "abbreviations"
+
+% Generate main TOC, LOF, LOT
+\tableofcontents
+\listoffigures
+\listoftables
+
+% Switch to Arabic numbering for main content
+\clearpage
+\pagenumbering{arabic}
+
+% ---------- Main Content: Chapters ----------
+% General Introduction
+\input{chapters/chapter 0/introduction}
+
+% Chapter 1: General Context
+\input{chapters/chapter 1/chapitre1} % Standardized naming
+% Chapter 2: 
+\input{chapters/chapter 2/chapter2}
+
+%Chapter 2 :
+\input{chapters/chapter 3/chapter3}
+% Conclusion 
+\clearpage
+\chapter*{General Conclusion}
+\addcontentsline{toc}{chapter}{General Conclusion}
+\input{chapters/chapter 0/conclusion}
+
+% ---------- Bibliography ----------
+\clearpage
+\addcontentsline{toc}{chapter}{Bibliography} % Add to TOC
+\begin{thebibliography}{9}
+\bibitem{laravel} Laravel Framework. \url{https://laravel.com}  
+\bibitem{jwt} JWT.io — JSON Web Tokens. \url{https://jwt.io}  
+\bibitem{mysql} MySQL Documentation. \url{https://dev.mysql.com}  
+\bibitem{agile} Agile Methodology. \url{https://www.agilealliance.org/agile101}  
+\bibitem{scrum} Scrum Framework. \url{https://www.scrum.org/resources/what-is-scrum}  
+\bibitem{clickup} ClickUp — Project Management Tool. \url{https://clickup.com}  
+\bibitem{uml} UML — Unified Modeling Language. \url{https://www.uml.org}  
+\bibitem{php} PHP Official Documentation. \url{https://www.php.net/docs.php}  
+\bibitem{laravelcrud} Laravel CRUD Tutorial. \url{https://laravel.com/docs/10.x/eloquent}  
+\bibitem{restapi} REST API Principles. \url{https://restfulapi.net}  
+\bibitem{postman} Postman — API Testing Tool. \url{https://www.postman.com}  
+\end{thebibliography}
+
+
+
+\end{document}
